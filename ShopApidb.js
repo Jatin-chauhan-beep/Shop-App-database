@@ -40,7 +40,7 @@ app.get("/products/:category?", (req, res) => {
       else res.send(result.rows);
     });
   } else {
-    sql = "SELECT * FROM products";
+    sql = "SELECT * FROM products ORDER BY id";
     client.query(sql, (err, result) => {
       if (err) res.status(404).send(err);
       else res.send(result.rows);
